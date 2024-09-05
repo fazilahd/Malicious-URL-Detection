@@ -1,6 +1,7 @@
 # Artificial Intelligence: Malicious URL Detection with Machine Learning
-## Project Description
-This project focuses on developing an AI-powered REST API backend designed to evaluate the likelihood of a given URL being malicious. The core of the system is a machine learning model that assesses URLs in real-time and provides feedback for continuous improvement.
+## Objective:
+This project aims to create a user-friendly web application that leverages a machine-learning model to detect phishing URLs. The application will allow users to input URLs, view the AI-generated probability of the URL being malicious, and provide feedback on the assessment's accuracy. This feedback loop will help improve the model's performance over time.
+
 
 ## How It Works
 1. **Data Handling**
