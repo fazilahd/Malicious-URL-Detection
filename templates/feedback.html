@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text Box and Blue Submit Button</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            padding: 5px;
+            margin-right: 10px;
+            width: 300px;
+        }
+        button[type="submit"] {
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <form action="/" method="post">
+        <label for="userInput">Enter Feedback:</label>
+        <input type="text" id="userInput" name="userInput" required>
+        <button type="button">Submit</button>
+    </form>
+</body>
+</html>

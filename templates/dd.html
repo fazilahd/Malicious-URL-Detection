@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malicious URL Detector</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #a5199c;
+        }
+        .container {
+            width: 600px;
+            height: 400px;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .container h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .url-input {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .url-input input {
+            width: 70%;
+            padding: 10px;
+            font-size: 1em;
+            border: 2px solid #555;
+            border-radius: 5px;
+        }
+        .url-input button {
+            padding: 10px 20px;
+            margin-left: 10px;
+            font-size: 1em;
+            background-color: #555;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .url-input button:hover {
+            background-color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Malicious URL Detector</h1>
+        <input type="text" id="urlInput" placeholder="Enter URL" />
+        <button onclick="analyzeURL()">Analyze</button>
+        <div class="result" id="result"></div>
+        </div>
+        <p>Check URL for Malware or Suspicious Behavior</p>
+        <p></p><a href="/index">Check the accuracy with our AI!</a></p>
+    </div>
+    <script>
+        async function analyzeURL() {
+            const url = document.getElementById('urlInput').value;
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = 'Analyzing...';
+
+            try {
+                const response = await fetch('/api/analyze', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ url }),
+                });
+
+                const data = await response.json();
+                if (data.status === 'success') {
+                    resultDiv.innerHTML = `The URL is ${data.prediction === 'bad' ? 'malicious' : 'safe'}.`;
+                } else {
+                    resultDiv.innerHTML = 'Safe!!';
+                }
+            } catch (error) {
+                resultDiv.innerHTML = 'Not Safe!!';
+            }
+        }
+    </script>
+</body>
+</html>

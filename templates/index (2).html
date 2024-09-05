@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Malicious URL Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"] {
+            padding: 5px;
+            margin-right: 10px;
+            width: 300px;
+        }
+        button[type="submit"] {
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Malicious URL Detection</h1>
+    <form action="/predict" method="post">
+        <label for="url">Enter URL:</label>
+        <input type="text" id="url" name="url" required> <!-- Added 'required' attribute for client-side validation -->
+        <button type="submit">Analyze</button>
+    </form>
+    {% if url %}
+        <p>URL: {{ url }}</p>
+        <p>Result: {{ result }}</p>
+    {% elif error %}
+        <p>{{ error }}</p>
+    {% endif %}
+    
+    <p>Model Performance:</p>
+    <ul>
+        <li>Accuracy: {{ accuracy }}</li>
+        <li>Precision: {{ precision }}</li>
+        <li>Recall: {{ recall }}</li>
+        <li>F1-Score: {{ f1 }}</li>
+    </ul>
+    <script>
+        async function analyzeURL() {
+            const url = document.getElementById('urlInput').value;
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = 'Analyzing...';
+
+            try {
+                const response = await fetch('/api/analyze', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ url }),
+                });
+
+                const data = await response.json();
+                if (data.status === 'success') {
+                    resultDiv.innerHTML = `The URL is ${data.prediction === 'bad' ? 'malicious' : 'safe'}.`;
+                } else {
+                    resultDiv.innerHTML = 'Error analyzing URL.';
+                }
+            } catch (error) {
+                resultDiv.innerHTML = 'Error analyzing URL.';
+            }
+        }
+    </script>
+
+</body>
+</html>

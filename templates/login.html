@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url('in2.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-container {
+            max-width: 400px;
+            padding: 30px;
+            background-color: rgba(8, 7, 7, 0.5);
+            border-radius: 8px;
+            border: 2px solid #000;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-body {
+            background-color: rgba(7, 7, 7, 0.7);
+            border-radius: 8px;
+            border: 2px solid #000;
+            color: #020203;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-label {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #01000a;
+        }
+
+        .form-control {
+            padding: 12px;
+            font-size: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            border: 2px solid #000;
+            transition: border-color 0.2s;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #04000e;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #0f0f0f;
+            box-shadow: 0 0 0 0.2rem rgba(8, 8, 8, 0.25);
+        }
+
+        .btn-login {
+            padding: 12px;
+            font-size: 1.1rem;
+            background-color: rgba(100, 100, 102, 0.8);
+            border: 2px solid #000;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-login:hover {
+            background-color: rgb(0, 0, 0);
+        }
+
+        .signup-link {
+            color: #032447;
+            text-decoration: none;
+        }
+
+        .signup-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title text-center mb-4">Welcome Back!</h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" id="username" name="username" class="form-control"
+                            placeholder="Enter your username" autofocus required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" id="password" name="password" class="form-control"
+                            placeholder="Enter your password" required>
+                    </div>
+                    <button type="submit" class="btn btn-login btn-block">Login</button>
+                </form>
+                <div class="text-center mt-3">
+                    <p>Don't have an account? <a href="signup.html" class="signup-link">Sign up here</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get username and password input values
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // You can add your own validation logic here if needed
+
+            // Check if username and password match predefined values
+            if (username === 'user' && password === 'password') {
+                // Store username in local storage
+                localStorage.setItem('username', username);
+
+                // Redirect to home page
+                window.location.href = 'home.html';
+            } else {
+                alert('Login failed. Invalid username or password.');
+            }
+        });
+    </script>
+</body>
+</html>

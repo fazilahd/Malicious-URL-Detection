@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>URLGuard Website</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+</style>
+</head>
+<body>
+
+  <nav class="w3-sidebar w3-yellow w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+    <div class="w3-container">
+      <h3 class="w3-padding-64"><b>URLGuard</b></h3>
+    </div>
+    <div class="w3-bar-block">
+      <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a> 
+      <a href="/about" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">About</a> 
+      <a href="/login" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">SignUp/Login</a> 
+      <a href="/wer" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">URL Scan</a>  <!-- Updated href -->
+    </div>
+  </nav>
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+  <span>URLGuard</span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:80px" id="showcase">
+    <h1 class="w3-jumbo"><b>Welcome to URLGuard:</b></h1>
+    <h1 class="w3-xxxlarge w3-text-purple"><b>Your Shield Against URL Threats.</b></h1>
+    <hr style="width:50px; border:5px solid violet; border-radius: 10px;">
+
+
+  </div>
+  
+  <!-- Photo grid (modal) -->
+  <div class="w3-row-padding">
+    <div class="w3-half">
+      <img src="/static/pic.jpeg" style="width:100%" onclick="onClick(this)" alt="Concrete meets bricks">
+      
+    </div>
+
+    <div class="w3-half">
+      
+    </div>
+  </div>
+
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div>
+
+  <!-- Services -->
+  <div class="w3-container" id="services" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-purple"><b>Our Commitment to Security</b></h1>
+
+    <hr style="width:50px; border:5px solid violet; border-radius: 10px;">
+
+    <p>At URLGuard, we are deeply committed to advancing your online safety through state-of-the-art technology and proactive cybersecurity solutions. Founded by a passionate team of cybersecurity enthusiasts and seasoned machine learning experts, URLGuard merges decades of collective industry experience with relentless innovation. This synergy allows us to stay ahead of the curve in identifying and neutralizing the latest and most sophisticated online threats.</p>
+    <p>URLGuard leverages state-of-the-art machine learning algorithms and real-time analysis to detect and mitigate risks associated with malicious URLs. Our dedication to technological excellence ensures that users receive accurate and timely threat assessments, empowering them to navigate the internet securely.
+    </p>
+  </div>
+  
+  <!-- Designers -->
+  <div class="w3-container" id="designers" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-purple"><b>Meet Our Team</b></h1>
+    <hr style="width:50px;border:5px solid violet" class="w3-round">
+    <p><b>Cybersecurity Enthusiasts and Innovators.</b></p>
+    <p>Our team at URLGuard comprises dedicated cybersecurity enthusiasts and innovators who are passionate about protecting users from digital threats. Each member brings a unique blend of expertise in cybersecurity, machine learning, and software engineering, cultivated through years of industry experience and academic rigor..
+    </p>
+    <p>Driven by a shared commitment to technological excellence and user safety, our team collaborates seamlessly to develop and deploy cutting-edge solutions. From developing sophisticated machine learning models to designing intuitive user interfaces, we work cohesively to ensure URLGuard remains at the forefront of cybersecurity innovation.</p>
+  </div>
+
+  <!-- The Team -->
+  <div class="w3-row-padding w3-grayscale">
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        
+        <div class="w3-container">
+          <h3>Fatima Fazil</h3>
+          <p class="w3-opacity">Data Science Enthusiast</p>
+          <p>"Fatima is a motivated third-year student pursuing a degree in Computer Science. With a strong foundation in Python programming and a keen interest in machine learning,Fatima enjoys tackling data-driven challenges.She actively participates in coding competitions and has a knack for applying theoretical knowledge to practical projects, aiming to make a meaningful impact in the field of AI."</p>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        
+        <div class="w3-container">
+          <h3>Ayushi Negi & Devyani Gupta</h3>
+          <p class="w3-opacity">Full-stack Developers</p>
+          <p>Ayushi and Devyani are versatile full-stack developers specializing in creating user-friendly web applications. With expertise in frontend and backend development, along with a keen eye for UI/UX design, they excel at translating project requirements into intuitive and responsive digital experiences.They are driven by a passion for building robust, scalable systems that enhance user interaction and satisfaction.</p>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        
+        <div class="w3-container">
+          <h3>D.N. Shreya</h3>
+          <p class="w3-opacity">Cybersecurity Enthusiast</p>
+          <p>Shreya is a dedicated student with a strong interest in cybersecurity. Currently pursuing her degree in Computer Science, she has acquired practical skills in network security and penetration testing. Shreya is passionate about safeguarding digital assets and enjoys exploring new methods to mitigate cybersecurity risks. With a proactive approach to learning and problem-solving, she is committed to contributing her knowledge to enhancing online security measures.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Packages / Pricing Tables -->
+  <div class="w3-container" id="packages" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-purple"><b>User Testimonials</b></h1>
+    <hr style="width:50px;border:5px solid violet" class="w3-round">
+    <div>
+        <p>"URLGuard has been a game-changer for our business. The real-time analysis and detailed reporting have significantly improved our online security." - Sarah M., IT Manager</p>
+    
+        <p>"I feel much safer browsing the internet now that I have URLGuard. It's user-friendly and incredibly efficient." - Rajesh K., Student</p>
+    
