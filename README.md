@@ -21,13 +21,13 @@ This project aims to create a user-friendly web application that leverages a mac
 * The model's effectiveness is evaluated using metrics such as accuracy, precision, recall, and F1-score. The focus is on minimizing false negatives to reduce the risk of missing a malicious URL.
   
 ## Repository Contents
-**static/**: Contains static files like CSS, JavaScript, and images.
+[**static/**](https://github.com/fazilahd/Malicious-URL-Detection/tree/main/static): Contains static files like CSS, JavaScript, and images.
 
-**templates/**: Includes HTML templates for the web application.
+[**templates/**](https://github.com/fazilahd/Malicious-URL-Detection/tree/main/templates): Includes HTML templates for the web application.
 
-**malicious_url_detection.ipynb**: Jupyter Notebook with code for model development and evaluation.
+[**malicious_url_detection.ipynb**](https://github.com/fazilahd/Malicious-URL-Detection/blob/main/malicious%20url%20detection.ipynb): Jupyter Notebook with code for model development and evaluation.
 
-**try (1).py**: Python script implementing the model and performing testing.
+[**try (1).py**](https://github.com/fazilahd/Malicious-URL-Detection/blob/main/try%20(1).py): Python script implementing the model and performing testing.
 
 ## Video Demo
 Watch the following video demo to see the application in action and understand how it works:
